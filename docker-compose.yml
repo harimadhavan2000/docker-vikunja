@@ -2,13 +2,13 @@ version: '3'
 
 services:
   db:
-  image: postgres:13
-  environment:
-    POSTGRES_PASSWORD: secret
-    POSTGRES_USER: vikunja
-  volumes:
-    - ./db:/var/lib/postgresql/data
-  restart: unless-stopped
+    image: postgres:13
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: vikunja
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    restart: unless-stopped
   api:
     image: vikunja/api
     environment:
